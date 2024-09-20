@@ -1,0 +1,21 @@
+10 HTML tags:
+script
+img
+div
+p
+h1
+figure
+a
+figcaption
+br
+
+5 CSS properties:
+background-color
+text-align
+margin
+padding
+color
+
+JS and Bootstrap:
+I use the container and container-fluid elements for my webpages' body,
+while utilizing javascript to create a table from a csv file for easy updating.

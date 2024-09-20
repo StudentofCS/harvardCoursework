@@ -1,0 +1,146 @@
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: dimGray;
+}
+
+a:active {
+    color: black;
+}
+
+body {
+    background-color: gainsboro;
+    margin: 0 auto;
+}
+
+caption {
+    color: black;
+    caption-side: top;
+    text-align: center;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+table {
+    width: 80%;
+    max-width: 100%;
+    font-size: 1em;
+    overflow-x: auto;
+    /* display: block; */
+}
+
+table, td, th {
+    border: 1px solid gainsboro;
+    border-collapse: collapse;
+    margin: 0 auto;
+    table-layout: 0 auto;
+}
+
+td, th {
+    background-color: silver;
+    word-wrap: break-word;
+}
+
+a.currentPage {
+    font-weight: bold;
+}
+
+.imageContainer {
+    text-align: center;
+}
+
+.imageContainer img {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    max-width: 450px;
+}
+
+/* .mainBody {
+    width: 80%;
+    margin: 0 auto;
+} */
+
+.menuButton{
+    padding-right: 6px;
+    padding-left: 6px;
+}
+
+a.menuButton:link {
+    color: black;
+}
+
+a.menuButton:visited {
+    color: black;
+}
+
+a.menuButton:hover {
+    color: dimGray;
+}
+
+a.menuButton:active {
+    color: black;
+}
+
+#booksTable td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#booksTable tr:nth-child(1) {
+    font-weight: bold;
+    text-align: center;
+}
+
+#cooking {
+    font-size: 12px;
+}
+
+#cooking img {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+}
+
+#cooking figure {
+    display: inline-block;
+}
+
+#mainHeader {
+    background-color: silver;
+    text-align: center;
+    padding-top: 32px;
+    margin-bottom: 50px;
+
+    h1 {
+        font-size:24px;
+        border-bottom: 1px solid gray;
+        margin-bottom: 0px;
+        padding-bottom: 16px;
+    }
+}
+
+#menu {
+    border-bottom: 1px solid gray;
+}
+
+@media (max-width: 768px) {
+    /* .mainBody {
+        width: 80%;
+        margin: 0 auto;
+    } */
+
+    #menu {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}

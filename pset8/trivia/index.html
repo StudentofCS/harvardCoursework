@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>A blood hound has a sense of smell 300x more powerful than a human's sense of smell. The sense of smell of
+                    a bear is how many times more powerful than a human's?</h3>
+                    <p><button class="question1 incorrect"></button>A. 100x</p>
+                    <p><button class="question1 incorrect"></button>B. 750x</p>
+                    <p><button class="question1 correct"></button>C. 2,100x</p>
+                    <p id="result1"></p>
+                <h3>How many lives does a cat have?</h3>
+                    <p><button class="question2 correct"></button>A. 1</p>
+                    <p><button class="question2 incorrect"></button>B. 9</p>
+                    <p><button class="question2 incorrect"></button>C. 24</p>
+                    <p id="result2"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3><p>In which country did chocolate originate?</p></h3>
+                <p>
+                    <input id="freeResponse"></input>
+                    <button id="responseButton">Check your answer</button>
+                </p>
+                <p id="freeResult"></p>
+            </div>
+        </div>
+        <script>
+            // TODO: Add code to check answers to questions
+            // Make a list of all the buttons with the question class
+            let questions = document.querySelectorAll("[class^='question']");
+            // Make a question/answer key to write the result for the correct question
+            let questionAnswerKey = {
+                "question1" : "result1",
+                "question2" : "result2",
+            };
+
+            // Add the click event listener to all the buttons with a question class
+            questions.forEach(function(question) {
+                question.addEventListener("click", function() {
+                    // Find the result for the specific question clicked on
+                    let resultKey = Array.from(this.classList).find(key => questionAnswerKey.hasOwnProperty(key));
+
+                    // Clear all the buttons of their green/red for the question that an answer button is being pressed
+                    let clearButtons = document.querySelectorAll("." + resultKey);
+                    clearButtons.forEach(function(clearButton) {
+                        clearButton.style.backgroundColor = "#d9edff";
+                        console.log(clearButton);
+                    });
+                    console.log(clearButtons);
+
+                    // Determine if the answer is correct or incorrect
+                    if (this.classList.contains("correct")) {
+                        document.getElementById(questionAnswerKey[resultKey]).innerText = "Correct!";
+                        this.style.backgroundColor = "green";
+                    }
+                    else if (this.classList.contains("incorrect")) {
+                        document.getElementById(questionAnswerKey[resultKey]).innerText = "Incorrect";
+                        this.style.backgroundColor = "red";
+                    }
+                });
+            });
+
+            // This is the answer to the free response question
+            let correctAnswer = "Mexico";
+
+            // Add event listener for the responseCheck button
+            document.getElementById("responseButton").addEventListener("click", function() {
+                let userAnswer = document.getElementById("freeResponse").value;
+
+
+                // Check if the user put any input in the free response and alert them to do so
+                if (userAnswer == "") {
+                    alert("Please enter an answer before clicking on the check your answer button.");
+                    return;
+                }
+
+                // Compare the input string to the answer to see if it's correct
+                if (userAnswer.toLowerCase().includes(correctAnswer.toLowerCase())) {
+                    document.getElementById("freeResult").innerText = "Correct!";
+                    this.style.backgroundColor = "green";
+                }
+                else {
+                    document.getElementById("freeResult").innerText = "Incorrect!";
+                    this.style.backgroundColor = "red";
+                }
+            });
+        </script>
+    </body>
+</html>
